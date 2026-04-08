@@ -18,7 +18,7 @@ public class SelectTestFigureOptionListener implements ActionListener {
             () -> {FiguresJoe.figureScript1(driverManager.getCurrentDriver());},
             () -> {FiguresJoe.figureScript2(driverManager.getCurrentDriver());},
             () -> {Factory.makeRectangle(2, 2, 10, 10).execute(driverManager.getCurrentDriver());},
-            () -> {Factory.makeTriangle(2, 2, 10, 10, 20, 20).execute(driverManager.getCurrentDriver());}
+            () -> {Factory.makeTriangle(0, 0, 20, 0, 20, 20).execute(driverManager.getCurrentDriver());}
     );
 
     public SelectTestFigureOptionListener(DriverManager driverManager) {
