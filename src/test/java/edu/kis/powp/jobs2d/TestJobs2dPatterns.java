@@ -25,19 +25,18 @@ public class TestJobs2dPatterns {
 	 * @param application Application context.
 	 */
 	private static void setupPresetTests(Application application) {
-		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
-				DriverFeature.getDriverManager());
+        SelectTestFigureOptionListener selectTestFigureOptionListener0 = new SelectTestFigureOptionListener(
+                DriverFeature.getDriverManager(), 0);
+        SelectTestFigureOptionListener selectTestFigureOptionListener2 = new SelectTestFigureOptionListener(
+                DriverFeature.getDriverManager(), 2);
+        SelectTestFigureOptionListener selectTestFigureOptionListener3 = new SelectTestFigureOptionListener(
+                DriverFeature.getDriverManager(), 3);
 
-		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
-		application.addTest("Factory Rectangle", (ActionEvent e) -> {
-			DriverCommand rect = Factory.makeRectangle(0, 0, 10, 10);
-			rect.execute(new DriverToDrawPanelAdapter());
-		});
-		application.addTest("Factory Triangle", (ActionEvent e) -> {
-			DriverCommand rect = Factory.makeTriangle(0, 0, 10, 10, 20, 20);
-			rect.execute(new DriverToDrawPanelAdapter());
-		});
-	}
+
+        application.addTest("Figure Joe 1", selectTestFigureOptionListener0);
+        application.addTest("Prostokąt", selectTestFigureOptionListener2);
+        application.addTest("Trójkąt", selectTestFigureOptionListener3);
+    }
 
 	/**
 	 * Setup driver manager, and set default driver for application.
